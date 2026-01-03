@@ -83,7 +83,7 @@ class QdrantVectorDB {
   }
 
   // Query for similar documents
-  async query(queryEmbedding, nResults = 3) {
+  async query(queryEmbedding, nResults) {
     try {
       const searchResult = await this.client.search(this.collectionName, {
         vector: queryEmbedding,
@@ -252,6 +252,7 @@ async function initializeVectorStore() {
 // Search for relevant context
 async function searchRelevantContext(query, numResults = MAX_RESULTS) {
   try {
+    console.log('searchRelevantContext called with query:', query);
     const queryEmbedding = await createEmbedding(query);
     const results = await vectorDB.query(queryEmbedding, numResults);
     return results;
@@ -259,6 +260,11 @@ async function searchRelevantContext(query, numResults = MAX_RESULTS) {
     console.error('Error searching context:', error);
     return [];
   }
+}
+
+if (require.main === module) {
+  // If this script is run directly, initialize the vector store
+  initializeVectorStore();
 }
 
 // Export functions and database instance
