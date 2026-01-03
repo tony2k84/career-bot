@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="chat-header">
+            <div class="profile-info">
+                <div class="avatar">
+                    <span>AT</span>
+                </div>
+                <div class="details">
+                    <h1>Abhishek Tanwar</h1>
+                    <p>Ask me anything about my career profile</p>
+                </div>
+            </div>
+            <div class="status">
+                <span class="status-dot"></span>
+                <span>Online</span>
+            </div>
+        </header>
+
+        <main class="chat-container">
+            <div class="messages" id="messages">
+                <div class="message assistant">
+                    <div class="message-content">
+                        <p>👋 Hello! <br /> <br />
+                            I'm here to help you learn about my professional background. You can ask me
+                            about
+                            my experience, skills, education, projects, or anything else from my profile.
+                        </p>
+                        <div class="suggestions">
+                            <button class="suggestion" data-message="What is their work experience?">Work
+                                Experience</button>
+                            <button class="suggestion" data-message="What skills do they have?">Skills</button>
+                            <button class="suggestion"
+                                data-message="What projects have they worked on?">Projects</button>
+                            <button class="suggestion"
+                                data-message="What is their educational background?">Education</button>
+                        </div>
+                    </div>
+                    <div class="timestamp" id="initial-time"></div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typing">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="input-section">
+            <div class="input-container">
+                <input type="text" id="messageInput" placeholder="Ask about experience, skills, projects..."
+                    maxlength="500">
+                <button id="sendButton" disabled>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
