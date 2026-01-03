@@ -607,3 +607,52 @@ button {
     animation: none;
   }
 }
+
+/* App Footer */
+.app-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface-elevated);
+  padding: 0.75rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: 'Fira Code', monospace;
+}
+
+.version {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  padding: 0.25rem 0.5rem;
+  color: var(--primary-light);
+  font-weight: 500;
+}
+
+.copyright {
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .app-footer {
+    padding: 0.75rem 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    font-size: 0.7rem;
+  }
+}
